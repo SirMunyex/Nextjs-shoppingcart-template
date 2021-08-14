@@ -16,8 +16,9 @@ export default function Layout({ children }) {
           >
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/cart">Cart</Nav.Link>
-         </Nav>
-         <Form className="d-flex" action="/search">
+         </Nav>       
+  </Navbar.Collapse>
+  <Form className="d-flex" action="/search">
          <FormControl
           type="search"
           placeholder="Search"
@@ -27,7 +28,6 @@ export default function Layout({ children }) {
          />
       <Button type="submit" variant="outline-success">Search</Button>
     </Form>
-  </Navbar.Collapse>
 </Navbar>
 
          {children}

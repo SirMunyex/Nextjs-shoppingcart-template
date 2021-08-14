@@ -3,9 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Home({products}) {
 
-
-  let count = 0;
-
   return (
   <Container>
 
@@ -13,11 +10,11 @@ export default function Home({products}) {
 
     {products.map((item, i) => { return (
 
-      <Col>
+      <Col  key={i}>
 
-      <Card key={i} style={{ width: '18rem' }}>
+      <Card style={{ width: '18rem' }}>
         
-        <Card.Link href={"/product"+item._id}>
+        <Card.Link href={"/product/"+item._id}>
          <Card.Img style={{height:"300px"}} variant="top" src={item.imgURL} />
         </Card.Link>
 
@@ -25,7 +22,9 @@ export default function Home({products}) {
           <Card.Title>{item.name}, Q{item.price}</Card.Title>
           <Card.Text>{item.description}</Card.Text>
          
-          <Button variant="warning"> Add to cart +</Button>
+          <Button variant="success"> 
+            Add to cart <i className="fas fa-shopping-cart"></i> 
+          </Button>
         </Card.Body>
       </Card>
 
