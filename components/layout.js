@@ -1,12 +1,15 @@
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Button, InputGroup, ButtonToolbar } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useSelector } from "react-redux";
 
 export default function Layout({ children }) {
+
+    const count = useSelector((state) => state.counter.items);
     return (
       <div>
         
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="#">Online store</Navbar.Brand>
+          <Navbar.Brand>Online store</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -14,20 +17,40 @@ export default function Layout({ children }) {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/cart">Cart</Nav.Link>
+          <Nav.Link href="/">
+            <i className="fas fa-home"></i>
+          </Nav.Link>
+         
+          <Nav.Link href="/cart">
+            <i className="fas fa-shopping-cart"></i>
+          </Nav.Link>
+
          </Nav>       
   </Navbar.Collapse>
-  <Form className="d-flex" action="/search">
-         <FormControl
-          type="search"
-          placeholder="Search"
-          className="mr-2"
-          aria-label="Search"
-          name="product"
-         />
-      <Button type="submit" variant="outline-success">Search</Button>
+
+  
+  <ButtonToolbar
+    className="justify-content-between"
+    aria-label="Toolbar with Button groups"
+  >
+  <InputGroup>
+    <InputGroup.Text id="btnGroupAddon2">  
+      <icon className="fas fa-search"></icon>
+    </InputGroup.Text>     
+    <Form className="d-flex" action="/search">
+      <FormControl
+        type="search"
+        placeholder="Search"
+        className="mr-2"
+        aria-label="Search"
+        name="product"
+        aria-describedby="btnGroupAddon2"
+      />     
     </Form>
+    
+  </InputGroup>
+  </ButtonToolbar>
+
 </Navbar>
 
          {children}

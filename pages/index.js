@@ -1,9 +1,14 @@
 import { Container, Button, Card, Row, Col } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { increment, addToCart } from "../features/counter/counterSlice";
+import { useDispatch } from "react-redux";
 
 export default function Home({products}) {
 
+  const dispatch = useDispatch();
+
   return (
+        
   <Container>
 
 <Row xs={1} md={3} className="g-4">
@@ -22,7 +27,7 @@ export default function Home({products}) {
           <Card.Title>{item.name}, Q{item.price}</Card.Title>
           <Card.Text>{item.description}</Card.Text>
          
-          <Button variant="success"> 
+          <Button variant="success" onClick={() => { dispatch(addToCart(item)); }}> 
             Add to cart <i className="fas fa-shopping-cart"></i> 
           </Button>
         </Card.Body>
@@ -32,7 +37,6 @@ export default function Home({products}) {
     )})}
 
 </Row>
-
 
   </Container>
   )
