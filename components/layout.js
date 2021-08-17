@@ -1,10 +1,16 @@
-import { Navbar, Nav, Form, FormControl, Button, InputGroup, ButtonToolbar } from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Button, InputGroup, ButtonToolbar, Badge } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector } from "react-redux";
 
 export default function Layout({ children }) {
 
-    const count = useSelector((state) => state.counter.items);
+    const items = useSelector((state) => state.counter.items);
+    let count = 0;
+
+    items.forEach(element => {
+      count += element.count;
+    });
+
     return (
       <div>
         
@@ -17,12 +23,15 @@ export default function Layout({ children }) {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-          <Nav.Link href="/">
-            <i className="fas fa-home"></i>
+          <Nav.Link href="/">      
+            <i className="fas fa-home"></i> 
           </Nav.Link>
          
           <Nav.Link href="/cart">
             <i className="fas fa-shopping-cart"></i>
+            <Badge pill bg="primary">
+             {count}
+            </Badge>      
           </Nav.Link>
 
          </Nav>       
