@@ -44,7 +44,7 @@ export default function Layout({ children }) {
   >
   <InputGroup>
     <InputGroup.Text id="btnGroupAddon2">  
-      <icon className="fas fa-search"></icon>
+      <i className="fas fa-search"></i>
     </InputGroup.Text>     
     <Form className="d-flex" action="/search">
       <FormControl
