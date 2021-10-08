@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './features/counter/counterSlice'
-
 import storage from 'redux-persist/lib/storage'
 import thunk from 'redux-thunk'
 import { persistReducer } from 'redux-persist'

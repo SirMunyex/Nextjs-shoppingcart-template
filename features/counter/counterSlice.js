@@ -14,9 +14,28 @@ export const counterSlice = createSlice({
       // immutable state based off those changes
       state.value += 1
     },
-    decrement: (state) => {
-      state.value -= 1
+    decrement: (state, action) => {
+
+      const index = state.items.map( e => e._id ).indexOf(action.payload._id);
+
+      if(state.items[index].count == 1){
+        state.items.splice(index,1)
+      }else{
+        state.items[index].count -= 1;
+      }
+
     },
+
+    deleteItem: (state, action) => {
+
+      const index = state.items.map( e => e._id ).indexOf(action.payload._id);
+      state.items.splice(index,1)     
+    },
+
+    deleteAll: (state, action) => {
+      state.items = [];
+    },
+
     incrementByAmount: (state, action) => {     
 
       state.value += action.payload
@@ -26,17 +45,26 @@ export const counterSlice = createSlice({
       if(state.items.length > 0){
 
         // Check if the product is already addded to the cart
-        const check = state.items.some( obj => obj.id == action.payload._id );
+        const check = state.items.some( obj => obj._id == action.payload._id );
 
         if(!check){
-            state.items.push({id: action.payload._id, count:1});
+            state.items.push({
+              _id: action.payload._id, 
+              name: action.payload.name,
+              price:action.payload.price, 
+              imgURL:action.payload.imgURL,
+              count:1});
         }else{
-            const index = state.items.map( e => e.id ).indexOf(action.payload._id);
+            const index = state.items.map( e => e._id ).indexOf(action.payload._id);
             state.items[index].count += 1;
         }
 
       }else{
-        state.items.push({id: action.payload._id, count:1}); 
+        state.items.push({_id: action.payload._id, 
+                         name: action.payload.name,
+                         count:1,
+                         price:action.payload.price, 
+                         imgURL:action.payload.imgURL}); 
       }
 
     }
@@ -44,6 +72,6 @@ export const counterSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount, addToCart } = counterSlice.actions
+export const { increment, decrement, deleteItem, deleteAll, incrementByAmount, addToCart } = counterSlice.actions;
 
-export default counterSlice.reducer
+export default counterSlice.reducer;

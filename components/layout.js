@@ -17,7 +17,7 @@ export default function Layout({ children }) {
         <Navbar bg="light" expand="lg">
           <Navbar.Brand>Online store</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
+          <Navbar.Collapse id="navbarScroll" style={{fontSize:'20px'}}>
           <Nav
             className="mr-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}

@@ -1,7 +1,11 @@
-export const getProducts = async () => {
+export const getProduct = (id) => {
 
-    let url = "http://localhost:8080/product/1"; 
+    let url = `http://localhost:8080/api/${id}`;
+
+    console.log(url);
+    
+    return fetch(url)
+    .then(data => data.json());
   
-    return await fetch(url).then(data => data.json());   
+  }
   
-}
