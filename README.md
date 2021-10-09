@@ -1,4 +1,4 @@
-# Next.js / React Ecommerce management dashboard
+# Next.js / React Ecommerce template
 
 ![alt text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r7kj8y4dfyd1aw989edi.png)
 
@@ -42,6 +42,11 @@ Welcome to the Next.js ecommerce template, it's a multipurpose open source proje
 * After building run `next start` to start a Node.js server that supports hybrid pages, serving both statically generated and server-side rendered pages.
 
 ## Pages
+
+### "Index"
+
+* Path: "/"
+* Description:
 
 ## API calls
 
