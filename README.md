@@ -27,11 +27,11 @@ Welcome to the Next.js ecommerce template, it's a multipurpose open source proje
 
 ## Installation
 
-1. Clone this repository git clone https://github.com/Luis-Rene-Lopez/Next.js-ecommerce-template
+1. Clone this repository `git clone https://github.com/Luis-Rene-Lopez/Next.js-ecommerce-template`
 
-2. Go to the project cd Ecommerce-REST-API
+2. Go to the project `cd Next.js-ecommerce-template`
 
-3. Install the project dependencies npm install
+3. Install the project dependencies `npm install`
 
 ## Run
 
