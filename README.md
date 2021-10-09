@@ -1,6 +1,6 @@
 # Next.js / React ecommerce template
 
-![alt text](https://nx.dev/documentation/latest/shared/nextjs-logo.png)
+![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXPZht3TOR3bBLgfb2zkUbJSgVFd8dZclyrRSg9sbbaxeY-NNanosYs0epF8G_JH4yQa4&usqp=CAU)
 
 ## Table of contents
 
