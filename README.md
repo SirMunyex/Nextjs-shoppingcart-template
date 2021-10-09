@@ -37,7 +37,7 @@ Welcome to the Next.js ecommerce template, it's a multipurpose open source proje
 
 * For development and testing purposes run `next dev` in order to initiate the application
 
-* For deployment and production ready run `next dev`. This command builds the production application in the .next folder. After building,
+* For deployment and production ready run `next dev`. This command builds the production application in the .next folder.
 
 * After building run `next start` to start a Node.js server that supports hybrid pages, serving both statically generated and server-side rendered pages.
 
