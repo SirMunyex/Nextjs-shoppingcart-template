@@ -1,6 +1,6 @@
 # Next.js / React Ecommerce management dashboard
 
-![alt text](https://news.america-digital.com/wp-content/uploads/2021/04/El-boom-del-eCommerce-tendencias-para-el-2021.jpg)
+![alt text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r7kj8y4dfyd1aw989edi.png)
 
 ## Table of contents
 
