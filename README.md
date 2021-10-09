@@ -15,10 +15,13 @@
 
 ## Introduction
 
+Welcome to the Next.js ecommerce template, it's a multipurpose open source project mainly designed for selling products online.  
+
 ## Technology
 
 * React.js
 * Next.js 
+* Server side rendering
 * React Bootstrap
 * NPM
 
