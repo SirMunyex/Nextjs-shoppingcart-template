@@ -47,6 +47,7 @@ Welcome to the Next.js ecommerce template, it's a multipurpose open source proje
 
 * Path: "/"
 * Description:
+* Features: 
 
 ## API calls
 
