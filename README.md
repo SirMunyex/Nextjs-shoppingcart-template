@@ -43,7 +43,7 @@ Welcome to the Next.js ecommerce template, it's a multipurpose open source proje
 
 ## Pages
 
-### "Index"
+### Index
 
 * Path: "/"
 * Description:
