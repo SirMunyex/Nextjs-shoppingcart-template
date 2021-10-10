@@ -6,21 +6,21 @@ import { Table, Image, Row, Col, Container } from 'react-bootstrap';
 export default function search(){
     
     const router = useRouter()
-    const {product}  = router.query;
+    const {item}  = router.query;
     const [products, setProducts] = useState([]);
     
     useEffect(() => {
-        if(!product) {
+        if(!item) {
           return;
         }
 
         const getData = async() => {
-            const response = await axios.post('http://localhost:8080/api/search', {name:product, offset:0, limit:10});
+            const response = await axios.post('http://localhost:8080/api/search', {name:item, offset:0, limit:10});
             console.log(await response.data);
             setProducts(await response.data.products);
         }
         getData();
-      }, [product])
+      }, [item])
   
     return(
       <div>
