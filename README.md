@@ -45,9 +45,34 @@ Welcome to the Next.js ecommerce template, it's a multipurpose open source proje
 
 ### Index
 
-* Path: "/"
+* Path: `/`
 * Description:
 * Features: 
+
+### Search
+
+* Path: `/search`
+* Description:
+* Features: 
+
+### Product
+
+* Path: `/:productId`
+* Description:
+* Features: 
+
+### Cart
+
+* Path: `/cart`
+* Description:
+* Features: 
+
+### Checkout
+
+* Path: `/checkout`
+* Description:
+* Features: 
+
 
 ## API calls
 
