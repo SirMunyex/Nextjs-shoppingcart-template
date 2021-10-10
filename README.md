@@ -51,7 +51,7 @@ Welcome to the Next.js ecommerce template, it's a multipurpose open source proje
 
 ### Search
 
-* Path: `/search`
+* Path: `/search?item=productName`
 * Description:
 * Features: 
 
