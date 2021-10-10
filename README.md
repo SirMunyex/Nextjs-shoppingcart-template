@@ -57,7 +57,7 @@ Welcome to the Next.js ecommerce template, it's a multipurpose open source proje
 
 ### Product
 
-* Path: `/:productId`
+* Path: `/product/:productId`
 * Description:
 * Features: 
 
