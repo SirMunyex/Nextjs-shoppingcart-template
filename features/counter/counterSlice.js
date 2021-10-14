@@ -16,12 +16,18 @@ export const counterSlice = createSlice({
     },
     decrement: (state, action) => {
 
-      const index = state.items.map( e => e._id ).indexOf(action.payload._id);
+      const check = state.items.some( obj => obj._id == action.payload._id );
 
-      if(state.items[index].count == 1){
-        state.items.splice(index,1)
-      }else{
-        state.items[index].count -= 1;
+      if(check){
+
+       const index = state.items.map( e => e._id ).indexOf(action.payload._id);
+
+       if(state.items[index].count == 1){
+         state.items.splice(index,1)
+       }else{
+         state.items[index].count -= 1;
+       }
+       
       }
 
     },

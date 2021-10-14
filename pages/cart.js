@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { Col, Container, Row, Table, Image, InputGroup, Button, FormControl, Card } from "react-bootstrap";
+import { ListGroup, Col, Container, Row, Table, Image, InputGroup, Button, FormControl, Card } from "react-bootstrap";
 import { increment, decrement, addToCart, deleteItem, deleteAll } from "../features/counter/counterSlice";
 import { useDispatch } from "react-redux";
 
@@ -16,19 +16,21 @@ export default function Cart (){
     return (
       <div>
        <Container>
-        <Row>
+        <Row className="g-5 mt-5 mb-5">
          <Col>
          <Button onClick={() => dispatch(deleteAll())} variant="outline-danger">
          <i className='fas fa-trash'></i>
           remove all
          </Button>
-          <Table>
+          <Table className="mt-3">
             <tbody>
             {products.map( (item, i) => { return (
 
         <tr key={i}>
          <td>
+           <a href={`/product/${item._id}`}>
           <Image src={item.imgURL} rounded fluid style={{width:"80px"}} />
+          </a>
          </td>
          <td>
            {item.name} <br />
@@ -45,7 +47,7 @@ export default function Cart (){
              <i className='fas fa-minus'></i>
             </Button>
             <FormControl readOnly style={{width:"1px"}} value={item.count} />
-            <Button size="sm" onClick={() => { console.log(item._id); dispatch(addToCart(item)); }}>
+            <Button size="sm" onClick={() => { dispatch(addToCart(item)); }}>
              <i className='fas fa-plus'></i>
             </Button>
           </InputGroup>
@@ -62,15 +64,14 @@ export default function Cart (){
          </Col>
          <Col xs lg="4">
           <Card>
-            <Button size="large" href="/">
-                Continue shopping
-            </Button>
+             <Card.Title className="text-center">Order summery</Card.Title>
             <Card.Body>
-              Order summery <br />
-              Shipping: $0<br />              
-              Sub total: ${total} <br />
-              Tax: $0<br />
-              Total: ${total}
+             <ListGroup variant="flush">
+              <ListGroup.Item> Shipping: $0</ListGroup.Item>
+              <ListGroup.Item>Sub total: ${total}</ListGroup.Item>
+              <ListGroup.Item>Tax: $0</ListGroup.Item>
+              <ListGroup.Item>Total: ${total}</ListGroup.Item>
+             </ListGroup>
             </Card.Body>
              <Button size="large" href="/checkout" >
                 Checkout
@@ -82,3 +83,7 @@ export default function Cart (){
       </div>
     )
 }
+
+
+
+

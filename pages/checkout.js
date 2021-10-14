@@ -1,8 +1,7 @@
 import { useSelector } from "react-redux"
-import { Card, Col, Row, Container, Button, Form } from "react-bootstrap";
+import { Card, Col,ListGroup, Row, Container, Button, Form } from "react-bootstrap";
 
-export default function checkout(){
-
+export default function checkout({id}){
     
     const counter = useSelector(state => state.counter);
     const products = counter.items;
@@ -11,7 +10,7 @@ export default function checkout(){
     return (
      <div>
       <Container>
-      <Row>
+      <Row className="g-5 mt-5 mb-5">
 
       <Col>
        <Form>
@@ -59,12 +58,15 @@ export default function checkout(){
       <Col>
        <Card>
 
+        <Card.Title className="text-center">Order summery</Card.Title>
+
         <Card.Body>
-            Order summery <br />
-            Shipping: $0<br />              
-            Sub total: ${total} <br />
-            Tax: $0<br />
-            Total: ${total}
+        <ListGroup variant="flush">
+        <ListGroup.Item>Shipping: $0</ListGroup.Item>
+        <ListGroup.Item>Sub total: ${total}</ListGroup.Item>
+        <ListGroup.Item>Tax: $0</ListGroup.Item>
+        <ListGroup.Item>Total: ${total}</ListGroup.Item>
+        </ListGroup>
         </Card.Body>
 
       </Card>
@@ -74,4 +76,18 @@ export default function checkout(){
       </Container>
      </div>
     )
+}
+
+export async function getStaticProps(context){
+
+  const id = context.params;
+
+  if (!id) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return { props: { id } }
+
 }

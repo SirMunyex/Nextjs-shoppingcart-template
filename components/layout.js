@@ -1,4 +1,4 @@
-import { Navbar, Nav, Form, FormControl, Button, InputGroup, ButtonToolbar, Badge } from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Button, InputGroup, ButtonToolbar, Badge, Container } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector } from "react-redux";
 
@@ -14,7 +14,7 @@ export default function Layout({ children }) {
     return (
       <div>
         
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="dark" variant="dark"fixed="top" expand="lg">
           <Navbar.Brand>Online store</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll" style={{fontSize:'20px'}}>
@@ -36,7 +36,6 @@ export default function Layout({ children }) {
 
          </Nav>       
   </Navbar.Collapse>
-
   
   <ButtonToolbar
     className="justify-content-between"
@@ -52,7 +51,7 @@ export default function Layout({ children }) {
         placeholder="Search"
         className="mr-2"
         aria-label="Search"
-        name="product"
+        name="item"
         aria-describedby="btnGroupAddon2"
       />     
     </Form>
@@ -63,6 +62,11 @@ export default function Layout({ children }) {
 </Navbar>
 
          {children}
-        </div>)
+
+{/* <Container fluid style={{background:"#212529", color:"white"}} className="text-center footer navbar-fixed-bottom">
+  Copyright &copy; Luis Lopez {new Date().getFullYear()}
+</Container> */}
+
+</div>)
 }
   

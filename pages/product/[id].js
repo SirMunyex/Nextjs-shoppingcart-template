@@ -1,9 +1,9 @@
 import router from 'next/router';
 import { useEffect, useState } from "react";
-import { Container, Image, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Image, Row, Col, Card, Button, ListGroup, InputGroup, FormControl } from 'react-bootstrap';
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux";
-import { increment, addToCart } from "../../features/counter/counterSlice";
+import { increment, decrement, addToCart } from "../../features/counter/counterSlice";
 
 export default function product(){
 
@@ -30,24 +30,39 @@ export default function product(){
       getData();
     }, [id])
 
-    return(
-      <Container>
-        <Row>     
+    return (
+
+      <Container >
+        <Row className="g-5 mt-5">     
          <Col>   
-         <Image fluid src={product.imgURL} />
+         <Image fluid rounded src={product.imgURL} />
          </Col>
          <Col>
          <Card>
-           <Card.Title>
+          <Card.Body>
+           <Card.Title className="text-center">
              {product.name}
            </Card.Title>
            <Card.Body>
-            ${product.price} <br />
-            {product.description} <br />
-            Quantity : {count || 0}
+            <ListGroup variant="flush">
+             <ListGroup.Item><h3>${product.price}</h3></ListGroup.Item>
+             <ListGroup.Item>{product.description}</ListGroup.Item>
+
+            <InputGroup>
+             <Button size="sm" onClick={() =>  dispatch(decrement(product))}>
+              <i className='fas fa-minus'></i>
+             </Button>
+             <FormControl readOnly style={{width:"1px"}} value={count || 0} />
+              <Button size="sm" onClick={() => { dispatch(addToCart(product)); }}>
+               <i className='fas fa-plus'></i>
+              </Button>
+            </InputGroup>
+
+            </ListGroup>
            </Card.Body>
-           <Button onClick={() => { dispatch(addToCart(product)); }}>ADD TO CART</Button>
+          </Card.Body>
          </Card>
+
          </Col>
         </Row>
       </Container>
