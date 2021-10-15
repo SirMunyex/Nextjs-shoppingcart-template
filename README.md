@@ -43,11 +43,13 @@ Welcome to the Next.js ecommerce template, it's a multipurpose open source proje
 
 ## Pages
 
-### Index
+### Home
 
-* Path: `/`
+* Path: `/home`
 * Description:
 * Features: 
+
+![alt text](https://i.imgur.com/p1JXJBR.png)
 
 ### Search
 
