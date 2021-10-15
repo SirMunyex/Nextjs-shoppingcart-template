@@ -65,6 +65,8 @@ Welcome to the Next.js ecommerce template, it's a multipurpose open source proje
 * Description:
 * Features: 
 
+![alt text](https://i.imgur.com/X3Icsik.png)
+
 ### Cart
 
 * Path: `/cart`
