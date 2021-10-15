@@ -73,7 +73,7 @@ Welcome to the Next.js ecommerce template, it's a multipurpose open source proje
 * Description:
 * Features: 
 
-![alt text](https://i.imgur.com/0Sn3aOX.png)
+![alt text](https://i.imgur.com/XORfO2D.png)
 
 ### Checkout
 
