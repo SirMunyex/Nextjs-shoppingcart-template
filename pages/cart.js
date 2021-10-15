@@ -17,12 +17,15 @@ export default function Cart (){
       <div>
        <Container>
         <Row className="g-5 mt-5 mb-5">
+
+
          <Col>
+         <div>
          <Button onClick={() => dispatch(deleteAll())} variant="outline-danger">
          <i className='fas fa-trash'></i>
           remove all
          </Button>
-          <Table className="mt-3">
+          <Table className="mt-5">
             <tbody>
             {products.map( (item, i) => { return (
 
@@ -42,7 +45,7 @@ export default function Cart (){
            ${item.price}
          </td>
          <td>
-          <InputGroup>
+          <InputGroup style={{"width":"110px"}}>
             <Button size="sm" onClick={() =>  dispatch(decrement(item))}>
              <i className='fas fa-minus'></i>
             </Button>
@@ -53,7 +56,7 @@ export default function Cart (){
           </InputGroup>
          </td>
          <td>
-             ${item.price * item.count}
+             ${ Math.round(((item.price * item.count) + Number.EPSILON) * 100 ) / 100 }
          </td>
         </tr>
 
@@ -61,29 +64,43 @@ export default function Cart (){
             
             </tbody>
           </Table>
+         </div>
          </Col>
+
+
+
+
+
+
          <Col xs lg="4">
           <Card>
-             <Card.Title className="text-center">Order summery</Card.Title>
+             <Card.Title className="text-center">
+               <h2>Order summery</h2>
+               </Card.Title>
             <Card.Body>
              <ListGroup variant="flush">
-              <ListGroup.Item> Shipping: $0</ListGroup.Item>
-              <ListGroup.Item>Sub total: ${total}</ListGroup.Item>
-              <ListGroup.Item>Tax: $0</ListGroup.Item>
-              <ListGroup.Item>Total: ${total}</ListGroup.Item>
+              <ListGroup.Item>
+                <h5> Shipping: $0 </h5>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <h5>Sub total: ${Math.round(( total + Number.EPSILON ) * 100 ) / 100} </h5>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <h5>Tax: $0</h5>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <h5>Total: ${Math.round(( total + Number.EPSILON ) * 100 ) / 100}</h5>
+              </ListGroup.Item>
              </ListGroup>
             </Card.Body>
-             <Button size="large" href="/checkout" >
+             <Button variant="primary" size="large" href="/checkout" >
                 Checkout
              </Button>
           </Card>
+
          </Col>
         </Row>
        </Container>
       </div>
     )
 }
-
-
-
-

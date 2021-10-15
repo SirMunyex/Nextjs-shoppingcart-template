@@ -12,7 +12,7 @@ export default function Layout({ children }) {
     });
 
     return (
-      <div>
+      <div style={{"font-family":"Times New Roman"}}>
         
         <Navbar bg="dark" variant="dark"fixed="top" expand="lg">
           <Navbar.Brand>Online store</Navbar.Brand>
@@ -47,6 +47,8 @@ export default function Layout({ children }) {
     </InputGroup.Text>     
     <Form className="d-flex" action="/search">
       <FormControl
+        autocomplete="off"
+        style={{"font-family":"Times New Roman"}}
         type="search"
         placeholder="Search"
         className="mr-2"

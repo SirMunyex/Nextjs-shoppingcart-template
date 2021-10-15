@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from "react";
 import axios from 'axios';
-import { Table, Col, Image, Container, Row, ListGroup, Card, Pagination } from 'react-bootstrap';
+import { Table, Col, Badge, Image, Container, Row, ListGroup, Card, Pagination } from 'react-bootstrap';
 
 export default function search(){
     
@@ -42,7 +42,7 @@ export default function search(){
       <div>
 
       <Container>
-      <Row className="justify-content-md-center g-5 mt-5">     
+      <Row className="justify-content-md-center g-5 mt-5 mb-5">     
   
           {products.map((e, i) => {
           return (
@@ -61,9 +61,17 @@ export default function search(){
 
                 <Col sm={9}>
                 <Card.Body>       
-                  <Col>{e.name}</Col>    
-                  <Col>Q{e.price}</Col>
-                  <Col>{e.description}</Col> 
+                  <Col>
+                   <Card.Title><strong>{e.name}</strong></Card.Title>
+                   </Col>    
+                  <Col>
+                   <Card.Title>
+                    <Badge bg="warning" style={{"font-size":"20px", "color":"black"}} >${e.price}</Badge>
+                   </Card.Title>
+                   </Col>
+                  <Col style={{height:"80px"}} className="overflow-hidden">
+                    {e.description}
+                  </Col> 
                </Card.Body>
 
                 </Col>
@@ -78,7 +86,7 @@ export default function search(){
 
         </Row>
 
-        <Pagination>{items}</Pagination>
+        <Pagination className="justify-content-center">{items}</Pagination>
 
         </Container>
       </div>

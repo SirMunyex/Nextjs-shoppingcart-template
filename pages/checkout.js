@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
-import { Card, Col,ListGroup, Row, Container, Button, Form } from "react-bootstrap";
+import { Card, Badge, Col,ListGroup, Row, Container, Button, Form, InputGroup } from "react-bootstrap";
 
-export default function checkout({id}){
+export default function checkout(){
     
     const counter = useSelector(state => state.counter);
     const products = counter.items;
@@ -13,59 +13,109 @@ export default function checkout({id}){
       <Row className="g-5 mt-5 mb-5">
 
       <Col>
-       <Form>
+      <h3>
+      <Badge pill bg="primary">
+        <i class='far fa-credit-card'></i> Card details
+      </Badge>
+      </h3>
 
-        <Form.Group>
+       <Form className="mt-5">
+
+<Row className="mb-3">
+        <Form.Group as={Col}>
          <Form.Label>First Name</Form.Label>
-         <Form.Control type="text" />
+         <Form.Control required type="text" />
         </Form.Group>
 
-        <Form.Group>
+        <Form.Group as={Col}>
          <Form.Label>Last Name</Form.Label>
-         <Form.Control type="text" />
+         <Form.Control required type="text" />
         </Form.Group>
+</Row>
 
-        <Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Address</Form.Label>
+          <Form.Control required type="name" />
+        </Form.Group>
+              
+        <Form.Group className="mb-3">
          <Form.Label>Email</Form.Label>
-         <Form.Control type="email" />
+         <Form.Control required type="email" />
         </Form.Group>
 
-        <Form.Group>
+        <Form.Group className="mb-3">
          <Form.Label>Phone number</Form.Label>
-         <Form.Control type="text" />
+         <Form.Control required type="text" />
+        </Form.Group>
+        
+<Row className="mb-3">
+        <Form.Group as={Col}>
+         <Form.Label>Name on the card</Form.Label>
+         <Form.Control required type="text" />
         </Form.Group>
 
-        <Form.Group>
-         <Form.Label>Credit card number</Form.Label>
-         <Form.Control type="text" />
+        <Form.Group as={Col}>
+         <Form.Label>Card number</Form.Label>
+         {/* <Form.Control required type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" /> */}
+
+
+         <InputGroup className="mb-3">
+<Form.Control required type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" />
+  <InputGroup.Text id="basic-addon1"> 
+   <span className="">
+    <i class='far fa-credit-card'></i>
+   </span>
+ 
+  </InputGroup.Text>
+</InputGroup>
+
+
         </Form.Group>
 
-        <Form.Group>
-         <Form.Label>Security code</Form.Label>
-         <Form.Control type="text" />
-        </Form.Group>
+</Row>
 
-        <Form.Group>
-         <Form.Label>Expiration date</Form.Label>
-         <Form.Control type="text" />
-        </Form.Group>
 
-        <Button type="submit" variant="success"> Complete purchase</Button>
+
+
+<Row className="mb-3">
+
+<Form.Group as={Col}>
+<Form.Label>Expiration</Form.Label>
+
+<InputGroup className="mb-3" >
+  <Form.Control placeholder="MM" /> 
+  <Form.Control placeholder="YY" />
+</InputGroup>
+</Form.Group>
+
+
+<Form.Group as={Col}>
+  <Form.Label>CVV</Form.Label>
+  <Form.Control/> 
+</Form.Group>
+
+
+</Row>
+
+        <Button type="submit" variant="primary"> Complete purchase</Button>
 
        </Form>
+
       </Col>
+
+
 
       <Col>
        <Card>
 
-        <Card.Title className="text-center">Order summery</Card.Title>
+        <Card.Title className="text-center"><h2>Order summery</h2></Card.Title>
 
         <Card.Body>
         <ListGroup variant="flush">
-        <ListGroup.Item>Shipping: $0</ListGroup.Item>
-        <ListGroup.Item>Sub total: ${total}</ListGroup.Item>
-        <ListGroup.Item>Tax: $0</ListGroup.Item>
-        <ListGroup.Item>Total: ${total}</ListGroup.Item>
+        <ListGroup.Item><h5>Shipping: $0</h5></ListGroup.Item>
+        <ListGroup.Item><h5>Sub total: ${Math.round(( total + Number.EPSILON ) * 100 ) / 100}</h5></ListGroup.Item>
+        <ListGroup.Item><h5>Tax: $0</h5></ListGroup.Item>
+        <ListGroup.Item><h5>Total: ${Math.round(( total + Number.EPSILON ) * 100 ) / 100}</h5></ListGroup.Item>
         </ListGroup>
         </Card.Body>
 
@@ -76,18 +126,4 @@ export default function checkout({id}){
       </Container>
      </div>
     )
-}
-
-export async function getStaticProps(context){
-
-  const id = context.params;
-
-  if (!id) {
-    return {
-      notFound: true,
-    }
-  }
-
-  return { props: { id } }
-
 }

@@ -44,11 +44,12 @@ export default function Home({products}) {
          <Card.Img style={{height:"200px"}} variant="top" src={item.imgURL} />
         </Card.Link>
 
-          <Card.Title className="mt-3 mb-3">
-            {item.name} <Badge  text="dark" bg="warning">${item.price}</Badge>
-          </Card.Title>
-         
-          <Button variant="success" onClick={() => { dispatch(addToCart(item)); }}> 
+          <Card.Title style={{height:"70px"}} className="overflow-hidden mt-3">
+            {item.name}
+          </Card.Title> 
+
+          <Badge style={{"font-size":"20px", "color":"black"}} className="mt-1 mb-3" bg="warning">${item.price}</Badge> <br />
+          <Button className="mb-3" variant="success" onClick={() => { dispatch(addToCart(item)); }}> 
             Add to cart <i className="fas fa-shopping-cart"></i> 
           </Button>
           
@@ -60,7 +61,7 @@ export default function Home({products}) {
 
 </Row>
 
-  <Pagination>{items}</Pagination>
+  <Pagination className="justify-content-center">{items}</Pagination>
 
   </Container>
   )

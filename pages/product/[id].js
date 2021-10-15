@@ -41,23 +41,37 @@ export default function product(){
          <Card>
           <Card.Body>
            <Card.Title className="text-center">
-             {product.name}
+             <h3>{product.name}</h3>
            </Card.Title>
            <Card.Body>
             <ListGroup variant="flush">
              <ListGroup.Item><h3>${product.price}</h3></ListGroup.Item>
-             <ListGroup.Item>{product.description}</ListGroup.Item>
+             <ListGroup.Item>
+              <h6> {product.description}</h6>
+             </ListGroup.Item>            
 
-            <InputGroup>
-             <Button size="sm" onClick={() =>  dispatch(decrement(product))}>
-              <i className='fas fa-minus'></i>
-             </Button>
-             <FormControl readOnly style={{width:"1px"}} value={count || 0} />
-              <Button size="sm" onClick={() => { dispatch(addToCart(product)); }}>
-               <i className='fas fa-plus'></i>
-              </Button>
-            </InputGroup>
+             <ListGroup.Item>
+               <h5><strong>Brand:</strong> {product.brand}</h5>
+             </ListGroup.Item>
 
+             <ListGroup.Item>
+              <h5><strong>Manufacturer:</ strong> {product.manufacturer}</h5>
+             </ListGroup.Item>
+
+             <ListGroup.Item>
+
+              <InputGroup style={{"width":"110px"}}>
+                <Button size="sm" onClick={() =>  dispatch(decrement(product))}>
+                 <i className='fas fa-minus'></i>
+                </Button>
+                 <FormControl readOnly style={{width:"1px"}} value={count || 0} />
+                <Button size="sm" onClick={() => { dispatch(addToCart(product)); }}>
+                 <i className='fas fa-plus'></i>
+                </Button>
+                
+              </InputGroup> 
+              </ ListGroup.Item>
+         
             </ListGroup>
            </Card.Body>
           </Card.Body>
