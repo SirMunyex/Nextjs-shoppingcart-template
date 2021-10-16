@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { useRouter } from 'next/router';
 import { getProducts } from "../../services/productServices";
 import { Container, Button, Card, Row, Col, Pagination, Badge } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const limit = 12;
 let offset;
