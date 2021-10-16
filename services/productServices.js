@@ -1,9 +1,14 @@
-export const getProduct = (id) => {
+import axios from "axios";
 
-    let url = `http://localhost:8080/api/${id}`;
+const baseAPI = "http://localhost:8080/api";
+
+export const getProduct = (id) => {
         
-    return fetch(url)
+    return fetch(`${baseAPI}/${id}`)
     .then(data => data.json());
-  
-  }
-  
+}
+
+export const getProducts = async (offset, limit) => {
+  const request = await axios.post(`${baseAPI}/products`, {offset, limit});
+  return request.data;
+}
