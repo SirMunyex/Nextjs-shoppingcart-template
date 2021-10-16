@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { Card, Badge, Col,ListGroup, Row, Container, Button, Form, InputGroup } from "react-bootstrap";
+import { Card, Badge, Col, ListGroup, Row, Container, Button, Form, InputGroup } from "react-bootstrap";
 
 export default function checkout(){
     
@@ -15,7 +15,7 @@ export default function checkout(){
       <Col>
       <h3>
       <Badge pill bg="primary">
-        <i class='far fa-credit-card'></i> Card details
+        <i className='far fa-credit-card'></i> Card details
       </Badge>
       </h3>
 
@@ -56,14 +56,14 @@ export default function checkout(){
 
         <Form.Group as={Col}>
          <Form.Label>Card number</Form.Label>
-         {/* <Form.Control required type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" /> */}
+         {/* <Form.Control required type="tel" inputMode="numeric" pattern="[0-9\s]{13,19}" autoComplete="cc-number" maxLength="19" placeholder="xxxx xxxx xxxx xxxx" /> */}
 
 
          <InputGroup className="mb-3">
-<Form.Control required type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" />
+<Form.Control required type="tel" inputMode="numeric" pattern="[0-9\s]{13,19}" autoComplete="cc-number" maxLength="19" placeholder="xxxx xxxx xxxx xxxx" />
   <InputGroup.Text id="basic-addon1"> 
    <span className="">
-    <i class='far fa-credit-card'></i>
+    <i className='far fa-credit-card'></i>
    </span>
  
   </InputGroup.Text>
@@ -83,15 +83,15 @@ export default function checkout(){
 <Form.Label>Expiration</Form.Label>
 
 <InputGroup className="mb-3" >
-  <Form.Control placeholder="MM" /> 
-  <Form.Control placeholder="YY" />
+  <Form.Control required placeholder="MM" /> 
+  <Form.Control required placeholder="YY" />
 </InputGroup>
 </Form.Group>
 
 
 <Form.Group as={Col}>
   <Form.Label>CVV</Form.Label>
-  <Form.Control/> 
+  <Form.Control required/> 
 </Form.Group>
 
 

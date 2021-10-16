@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from "react";
 import axios from 'axios';
-import { Table, Col, Badge, Image, Container, Row, ListGroup, Card, Pagination } from 'react-bootstrap';
+import { Col, Badge, Container, Row, Card, Pagination } from 'react-bootstrap';
 
 export default function search(){
     
@@ -47,7 +47,7 @@ export default function search(){
           {products.map((e, i) => {
           return (
 
-         <Card style={{ width: '58rem' }}>
+         <Card style={{ width: '58rem' }} key={i}>
 
           <a href={`/product/${e._id}`} style={{color: "inherit", textDecoration:"none"}}>
 
@@ -55,7 +55,7 @@ export default function search(){
 
                 <Col sm={3}>
                 <Card.Body>
-                 <Card.Img style={{height:"150px"}} fluid src={e.imgURL} fluid rounded />  
+                 <Card.Img style={{height:"150px"}} fluid="true" src={e.imgURL} fluid="true" rounded="true" />  
                  </Card.Body>
                 </Col>
 
@@ -66,7 +66,7 @@ export default function search(){
                    </Col>    
                   <Col>
                    <Card.Title>
-                    <Badge bg="warning" style={{"font-size":"20px", "color":"black"}} >${e.price}</Badge>
+                    <Badge bg="warning" style={{fontSize:"20px", "color":"black"}} >${e.price}</Badge>
                    </Card.Title>
                    </Col>
                   <Col style={{height:"80px"}} className="overflow-hidden">

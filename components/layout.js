@@ -12,7 +12,7 @@ export default function Layout({ children }) {
     });
 
     return (
-      <div style={{"font-family":"Times New Roman"}}>
+      <div style={{fontFamily:"Times New Roman"}}>
         
         <Navbar bg="dark" variant="dark"fixed="top" expand="lg">
           <Navbar.Brand>Online store</Navbar.Brand>
@@ -47,8 +47,8 @@ export default function Layout({ children }) {
     </InputGroup.Text>     
     <Form className="d-flex" action="/search">
       <FormControl
-        autocomplete="off"
-        style={{"font-family":"Times New Roman"}}
+        autoComplete="off"
+        style={{fontFamily:"Times New Roman"}}
         type="search"
         placeholder="Search"
         className="mr-2"
@@ -64,11 +64,6 @@ export default function Layout({ children }) {
 </Navbar>
 
          {children}
-
-{/* <Container fluid style={{background:"#212529", color:"white"}} className="text-center footer navbar-fixed-bottom">
-  Copyright &copy; Luis Lopez {new Date().getFullYear()}
-</Container> */}
-
 </div>)
 }
   

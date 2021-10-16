@@ -1,9 +1,8 @@
 import router from 'next/router';
 import { useEffect, useState } from "react";
 import { Container, Image, Row, Col, Card, Button, ListGroup, InputGroup, FormControl } from 'react-bootstrap';
-import { useSelector } from "react-redux"
-import { useDispatch } from "react-redux";
-import { increment, decrement, addToCart } from "../../features/counter/counterSlice";
+import { useSelector, useDispatch } from "react-redux"
+import { decrement, addToCart } from "../../features/counter/counterSlice";
 
 export default function product(){
 
@@ -35,7 +34,7 @@ export default function product(){
       <Container >
         <Row className="g-5 mt-5">     
          <Col>   
-         <Image fluid rounded src={product.imgURL} />
+         <Image fluid="true" rounded="true" src={product.imgURL} />
          </Col>
          <Col>
          <Card>

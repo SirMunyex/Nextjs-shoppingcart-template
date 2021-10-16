@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 import { ListGroup, Col, Container, Row, Table, Image, InputGroup, Button, FormControl, Card } from "react-bootstrap";
-import { increment, decrement, addToCart, deleteItem, deleteAll } from "../features/counter/counterSlice";
+import { decrement, addToCart, deleteItem, deleteAll } from "../features/counter/counterSlice";
 import { useDispatch } from "react-redux";
 
 export default function Cart (){
@@ -32,7 +32,7 @@ export default function Cart (){
         <tr key={i}>
          <td>
            <a href={`/product/${item._id}`}>
-          <Image src={item.imgURL} rounded fluid style={{width:"80px"}} />
+          <Image src={item.imgURL} rounded="true" fluid="true" style={{width:"80px"}} />
           </a>
          </td>
          <td>

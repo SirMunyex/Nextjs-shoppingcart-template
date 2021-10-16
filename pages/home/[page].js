@@ -1,8 +1,7 @@
 import { Container, Button, Card, Row, Col, Pagination, Badge } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { increment, addToCart } from "../../features/counter/counterSlice"
+import { addToCart } from "../../features/counter/counterSlice"
 import { useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import axios from "axios";
 
@@ -48,7 +47,7 @@ export default function Home({products}) {
             {item.name}
           </Card.Title> 
 
-          <Badge style={{"font-size":"20px", "color":"black"}} className="mt-1 mb-3" bg="warning">${item.price}</Badge> <br />
+          <Badge style={{fontSize:"20px", "color":"black"}} className="mt-1 mb-3" bg="warning">${item.price}</Badge> <br />
           <Button className="mb-3" variant="success" onClick={() => { dispatch(addToCart(item)); }}> 
             Add to cart <i className="fas fa-shopping-cart"></i> 
           </Button>
