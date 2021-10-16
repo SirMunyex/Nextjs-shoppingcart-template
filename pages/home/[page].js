@@ -12,16 +12,14 @@ export default function Home({products}) {
 
   const dispatch = useDispatch();   
   const router = useRouter()
-  let {page}  = router.query;
-  page = Number(page) || 1;
-  let total = products.total;
-  let active = page;
-  let items = [];
+  let products_total = products.total;
+  let active_page = Number(router.query.page) || 1;
+  let pagination_items = [];
 
-  for (let number = 1; number <= Math.ceil(total / limit); number++) {
-    items.push(
+  for (let number = 1; number <= Math.ceil(products_total / limit); number++) {
+    pagination_items.push(
       <Pagination.Item href={`/home/${number}`} 
-                       key={number} active={number === active}>
+                       key={number} active={number === active_page}>
         {number}
       </Pagination.Item>,
     );
@@ -33,8 +31,7 @@ export default function Home({products}) {
    <Row className="g-5 mt-5 mb-5">
     {products.products.map((item, i) => { return (
      <Col key={i} xs={12} sm={4}>  
-      <Card className="text-center" style={{ width: '300px' }} >
-              
+      <Card className="text-center" style={{ width: '300px' }} >              
        <Card.Body> 
          
         <Card.Link href={`/product/${item._id}`}>
@@ -57,7 +54,7 @@ export default function Home({products}) {
     )})}
    </Row>
 
-  <Pagination className="justify-content-center">{items}</Pagination>
+  <Pagination className="justify-content-center">{pagination_items}</Pagination>
 
   </Container>
   )
@@ -66,7 +63,7 @@ export default function Home({products}) {
 export async function getServerSideProps(context){
   
   const {page} = context.params;
-  offset = (page - 1) * limit;
+  offset = (Number(page) - 1) * limit;
   const products = await getProducts(offset, limit);
 
   if (!products) {
