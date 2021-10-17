@@ -11,7 +11,7 @@ export default function Cart (){
 
     const products = counter.items;
     
-    const total = Math.round(( products.reduce((a,b) => + a + + (b.price * b.count), 0) + Number.EPSILON ) * 100 ) / 100;
+    const total = (Math.round(( products.reduce((a,b) => + a + + (b.price * b.count), 0) + Number.EPSILON ) * 100 ) / 100) || 0;
 
     if(total != 0){
 
