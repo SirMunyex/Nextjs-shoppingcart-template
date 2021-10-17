@@ -5,7 +5,7 @@ export default function checkout(){
     
   const counter = useSelector(state => state.counter);
   const products = counter.items;
-  const total = products.reduce((a,b) => + a + + (b.price * b.count), 0);
+  const total = (Math.round(( products.reduce((a,b) => + a + + (b.price * b.count), 0) + Number.EPSILON ) * 100 ) / 100) || 0;
 
   return (
   <Container>
@@ -94,9 +94,9 @@ export default function checkout(){
       <Card.Body>
        <ListGroup variant="flush">
         <ListGroup.Item><h5>Shipping: $0</h5></ListGroup.Item>
-        <ListGroup.Item><h5>Sub total: ${Math.round(( total + Number.EPSILON ) * 100 ) / 100}</h5></ListGroup.Item>
+        <ListGroup.Item><h5>Sub total: ${total}</h5></ListGroup.Item>
         <ListGroup.Item><h5>Tax: $0</h5></ListGroup.Item>
-        <ListGroup.Item><h5>Total: ${Math.round(( total + Number.EPSILON ) * 100 ) / 100}</h5></ListGroup.Item>
+        <ListGroup.Item><h5>Total: ${total}</h5></ListGroup.Item>
        </ListGroup>
       </Card.Body>
      </Card>
