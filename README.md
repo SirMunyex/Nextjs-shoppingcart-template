@@ -84,8 +84,6 @@ Welcome to the Next.js ecommerce template, it's a multipurpose open source proje
 
 ![alt text](https://i.imgur.com/N5Ewmdl.png)
 
-## API calls
-
 ## Licence
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
