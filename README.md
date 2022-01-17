@@ -88,4 +88,4 @@ Welcome to the Next.js ecommerce template, it's a multipurpose open source proje
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 * MIT License
-* Copyright 2021 © Luis Lopez
+* Copyright 2021-2022 © [Luis Lopez](https://github.com/luislopez-dev)
