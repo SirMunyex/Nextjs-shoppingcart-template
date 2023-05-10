@@ -1,7 +1,5 @@
 # Next.js / React ecommerce template
 
-![alt text](https://nx.dev/documentation/latest/shared/nextjs-logo.png)
-
 ## Table of contents
 
 * [Introduction](#introduction)
