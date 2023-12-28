@@ -1,3 +1,8 @@
+/*
+ * Author: Luis López
+ * Website: https://github.com/luislopez-dev
+ * Description: Training Project
+ */
 import '../styles/globals.css'
 import Layout from '../components/layout';
 import '@fortawesome/fontawesome-free/js/all.js';

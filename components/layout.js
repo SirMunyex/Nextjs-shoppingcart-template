@@ -1,3 +1,8 @@
+/*
+ * Author: Luis López
+ * Website: https://github.com/luislopez-dev
+ * Description: Training Project
+ */
 import { Navbar, Nav, Form, FormControl, Button, InputGroup, ButtonToolbar, Badge, Container } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector } from "react-redux";

@@ -1,3 +1,8 @@
+/*
+ * Author: Luis López
+ * Website: https://github.com/luislopez-dev
+ * Description: Training Project
+ */
 import router from 'next/router';
 import { useEffect, useState } from "react";
 import { Container, Image, Row, Col, Card, Button, ListGroup, InputGroup, FormControl } from 'react-bootstrap';

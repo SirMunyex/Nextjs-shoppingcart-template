@@ -1,3 +1,8 @@
+/*
+ * Author: Luis López
+ * Website: https://github.com/luislopez-dev
+ * Description: Training Project
+ */
 import { createSlice } from '@reduxjs/toolkit'
 
 export const counterSlice = createSlice({

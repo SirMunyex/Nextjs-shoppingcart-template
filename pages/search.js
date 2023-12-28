@@ -1,3 +1,8 @@
+/*
+ * Author: Luis López
+ * Website: https://github.com/luislopez-dev
+ * Description: Training Project
+ */
 import { useRouter } from 'next/router'
 import { useEffect, useState } from "react";
 import { Col, Badge, Container, Row, Card, Pagination } from 'react-bootstrap';

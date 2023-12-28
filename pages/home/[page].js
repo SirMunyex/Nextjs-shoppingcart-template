@@ -1,3 +1,8 @@
+/*
+ * Author: Luis López
+ * Website: https://github.com/luislopez-dev
+ * Description: Training Project
+ */
 import { addToCart } from "../../features/counter/counterSlice"
 import { useDispatch } from "react-redux";
 import { useRouter } from 'next/router';

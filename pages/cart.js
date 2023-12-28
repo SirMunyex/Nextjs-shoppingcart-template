@@ -1,3 +1,8 @@
+/*
+ * Author: Luis López
+ * Website: https://github.com/luislopez-dev
+ * Description: Training Project
+ */
 import { useSelector } from "react-redux"
 import { ListGroup, Alert, Col, Container, Row, Table, Image, InputGroup, Button, FormControl, Card } from "react-bootstrap";
 import { decrement, addToCart, deleteItem, deleteAll } from "../features/counter/counterSlice";

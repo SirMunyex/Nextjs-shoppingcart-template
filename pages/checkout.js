@@ -1,3 +1,8 @@
+/*
+ * Author: Luis López
+ * Website: https://github.com/luislopez-dev
+ * Description: Training Project
+ */
 import { useSelector } from "react-redux"
 import { Card, Badge, Col, ListGroup, Row, Container, Button, Form, InputGroup } from "react-bootstrap";
 
